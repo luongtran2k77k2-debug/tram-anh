@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20/10 - Trâm Anh</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: radial-gradient(circle, #35205c, #080914 75%);
+}
+
+.card {
+    width: min(90%, 500px);
+    padding: 40px 25px;
+    text-align: center;
+    border: 1px solid #bda5ff;
+    border-radius: 25px;
+    background: rgba(80, 55, 125, 0.35);
+    box-shadow: 0 0 35px #8955ff;
+    animation: float 3s ease-in-out infinite;
+}
+
+h1 {
+    color: #ffc4e1;
+    font-size: clamp(35px, 8vw, 55px);
+    text-shadow: 3px 3px 0 #753da8, 0 0 20px #f49bd3;
+}
+
+.name {
+    color: #ffd4eb;
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 0 0 15px #ff8fc9;
+}
+
+p {
+    line-height: 1.8;
+    color: #f0eaff;
+}
+
+.particle {
+    position: fixed;
+    bottom: -30px;
+    color: #ffc4e1;
+    pointer-events: none;
+    animation: rise 7s linear infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotateY(-3deg); }
+    50% { transform: translateY(-12px) rotateY(3deg); }
+}
+
+@keyframes rise {
+    from { transform: translateY(0) rotate(0); opacity: 0; }
+    20% { opacity: 1; }
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+    <div>20 · 10 · 2026</div>
+    <h1>HAPPY<br>20/10</h1>
+    <div class="name">Trâm Anh ✦</div>
+    <p>
+        Chúc Trâm Anh có một ngày 20/10 thật vui,<br>
+        luôn tự tin, học tốt và giữ mãi năng lượng tích cực.<br>
+        Chúc em có thật nhiều trải nghiệm đáng nhớ nhé!
+    </p>
+    <div>A LITTLE WISH · JUST FOR YOU</div>
+</div>
+
+<script>
+for (let i = 0; i < 30; i++) {
+    const p = document.createElement("div");
+    p.className = "particle";
+    p.textContent = Math.random() > 0.5 ? "✦" : "·";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDelay = Math.random() * 7 + "s";
+    p.style.fontSize = 12 + Math.random() * 18 + "px";
+    document.body.appendChild(p);
+}
+</script>
+</body>
+</html>
